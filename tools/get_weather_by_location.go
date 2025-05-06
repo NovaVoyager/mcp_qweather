@@ -9,7 +9,7 @@ import (
 )
 
 func WeatherTool() mcp.Tool {
-	weatherTool := mcp.NewTool("weather",
+	weatherTool := mcp.NewTool("city_weather",
 		mcp.WithDescription("获取中国3000+市县区的实时天气数据，包括实时温度、体感温度、风力风向、相对湿度、大气压强、降水量、能见度、露点温度、云量等"),
 		mcp.WithString("location",
 			mcp.Required(),
