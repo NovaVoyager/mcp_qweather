@@ -22,7 +22,7 @@ func WeatherWarningTool() mcp.Tool {
 
 func GetWeatherWarning(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallToolResult, error) {
 	location := request.Params.Arguments["location"].(string)
-	url := weatherHost + weatherWarning
+	url := host + weatherWarning
 	resp, err := getWeatherWarning(url, location)
 	if err != nil {
 		return nil, err

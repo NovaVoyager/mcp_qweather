@@ -42,7 +42,7 @@ func GetWeather(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallTool
 }
 
 func getWeatherByLocation(location string) (*WeatherResp, error) {
-	url := weatherHost + weatherNow + "?location=" + location
+	url := host + weatherNow + "?location=" + location
 	request := gorequest.New()
 	_, body, errs := request.Get(url).Set(keyHeader, apiKey).End()
 	if len(errs) > 0 {

@@ -28,7 +28,7 @@ func GetWeatherByDay(ctx context.Context, request mcp.CallToolRequest) (*mcp.Cal
 	day := request.Params.Arguments["day"].(string)
 	location := request.Params.Arguments["location"].(string)
 	URI := getDayURI(day)
-	url := weatherHost + URI
+	url := host + URI
 	resp, err := getDayWeather(url, location)
 	if err != nil {
 		return nil, err

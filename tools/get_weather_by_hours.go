@@ -28,7 +28,7 @@ func GetWeatherByHourly(ctx context.Context, request mcp.CallToolRequest) (*mcp.
 	hours := request.Params.Arguments["hours"].(string)
 	location := request.Params.Arguments["location"].(string)
 	URI := getHourlyURI(hours)
-	url := weatherHost + URI
+	url := host + URI
 	resp, err := getHourlyWeather(url, location)
 	if err != nil {
 		return nil, err

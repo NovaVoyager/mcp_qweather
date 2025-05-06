@@ -2,7 +2,6 @@ package tools
 
 const (
 	keyHeader      = "X-QW-Api-Key"
-	weatherHost    = "https://nb3wry4k6f.re.qweatherapi.com"
 	lookup         = "/geo/v2/city/lookup"
 	weatherNow     = "/v7/weather/now"
 	weather3d      = "/v7/weather/3d"
@@ -16,8 +15,15 @@ const (
 	weatherWarning = "/v7/warning/now"
 )
 
-var apiKey string
+var (
+	apiKey string
+	host   string
+)
 
 func SetApiKey(key string) {
 	apiKey = key
+}
+
+func SetHost(domain string) {
+	host = domain
 }

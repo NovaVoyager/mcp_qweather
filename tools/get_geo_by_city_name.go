@@ -43,7 +43,7 @@ func HandleCityGeo(ctx context.Context, request mcp.CallToolRequest) (*mcp.CallT
 }
 
 func getCityLocation(cityName string) (*GeoResp, error) {
-	url := weatherHost + lookup + "?location=" + cityName
+	url := host + lookup + "?location=" + cityName
 	request := gorequest.New()
 	_, body, errs := request.Get(url).Set(keyHeader, apiKey).End()
 	if len(errs) > 0 {
